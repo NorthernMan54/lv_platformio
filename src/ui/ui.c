@@ -46,7 +46,6 @@ void ui_Spa_Screen_screen_init(void);
 void ui_event_Spa_Screen( lv_event_t * e);
 lv_obj_t *ui_Spa_Screen;
 lv_obj_t *ui_uiThermostatPlaceholder;
-lv_obj_t *ui_arcContainer;
 lv_obj_t *ui_uiClock;
 lv_obj_t *ui_uiClockLabel;
 lv_obj_t *ui_HeatControls;

@@ -35,10 +35,10 @@ ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_ST
 ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR, _ui_theme_color_widgetBorder);
 ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA, _ui_theme_alpha_widgetBorder);
 lv_obj_set_style_border_width(ui_ThermostatLoading, 3, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_pad_left(ui_ThermostatLoading, 15, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_pad_right(ui_ThermostatLoading, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_pad_top(ui_ThermostatLoading, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_pad_bottom(ui_ThermostatLoading, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_left(ui_ThermostatLoading, 30, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_right(ui_ThermostatLoading, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_top(ui_ThermostatLoading, -10, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_bottom(ui_ThermostatLoading, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_HeatControlsLoading = lv_obj_create(ui_Loading_Screen);
 lv_obj_remove_style_all(ui_HeatControlsLoading);

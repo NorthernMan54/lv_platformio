@@ -45,13 +45,6 @@ lv_obj_set_style_pad_right(ui_uiThermostatPlaceholder, 10, LV_PART_MAIN| LV_STAT
 lv_obj_set_style_pad_top(ui_uiThermostatPlaceholder, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_pad_bottom(ui_uiThermostatPlaceholder, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_arcContainer = lv_obj_create(ui_uiThermostatPlaceholder);
-lv_obj_remove_style_all(ui_arcContainer);
-lv_obj_set_width( ui_arcContainer, 100);
-lv_obj_set_height( ui_arcContainer, 50);
-lv_obj_set_align( ui_arcContainer, LV_ALIGN_CENTER );
-lv_obj_remove_flag( ui_arcContainer, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
-
 ui_uiClock = lv_obj_create(ui_Spa_Screen);
 lv_obj_remove_style_all(ui_uiClock);
 lv_obj_set_width( ui_uiClock, LV_SIZE_CONTENT);  /// 250

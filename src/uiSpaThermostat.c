@@ -16,15 +16,6 @@ lv_obj_t *thermostatArc(lv_obj_t *parent)
 
   temperatureGuage = lv_scale_create(parent);
   lv_obj_set_size(temperatureGuage, lv_pct(80), lv_pct(80));
-  // lv_obj_set_width(temperatureGuage, 240);
-  // lv_obj_set_height(temperatureGuage, 130);
-  lv_obj_set_style_pad_left(temperatureGuage, 15, LV_PART_MAIN | LV_STATE_DEFAULT);
-  // lv_obj_set_style_pad_right(temperatureGuage, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
-  lv_obj_set_style_pad_top(temperatureGuage, -30, LV_PART_MAIN | LV_STATE_DEFAULT);
-  // lv_obj_set_style_pad_bottom(temperatureGuage, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
-  lv_obj_set_x(temperatureGuage, -20);
-  lv_obj_set_y(temperatureGuage, 0);
-
   lv_scale_set_label_show(temperatureGuage, true);
   //  lv_obj_set_size(temperatureGuage, THERMO_WIDTH * .7, THERMO_HEIGHT * .7);
   lv_scale_set_mode(temperatureGuage, LV_SCALE_MODE_ROUND_OUTER);
@@ -48,16 +39,16 @@ lv_obj_t *thermostatArc(lv_obj_t *parent)
   lv_style_init(&indicator_style);
 
   lv_style_set_text_font(&indicator_style, LV_FONT_DEFAULT);
-  lv_style_set_text_color(&indicator_style, lv_palette_darken(LV_PALETTE_BLUE, 3));
+  lv_style_set_text_color(&indicator_style, lv_palette_darken(LV_PALETTE_BLUE_GREY, 3));
 
-  lv_style_set_line_color(&indicator_style, lv_palette_darken(LV_PALETTE_BLUE, 3));
+  lv_style_set_line_color(&indicator_style, lv_palette_darken(LV_PALETTE_BLUE_GREY, 3));
   lv_style_set_width(&indicator_style, 10U);
   lv_style_set_line_width(&indicator_style, 2U);
   lv_obj_add_style(temperatureGuage, &indicator_style, LV_PART_INDICATOR);
 
   static lv_style_t minor_ticks_style;
   lv_style_init(&minor_ticks_style);
-  lv_style_set_line_color(&minor_ticks_style, lv_palette_lighten(LV_PALETTE_BLUE, 2));
+  lv_style_set_line_color(&minor_ticks_style, lv_palette_lighten(LV_PALETTE_BLUE_GREY, 2));
   lv_style_set_width(&minor_ticks_style, 5U);
   lv_style_set_line_width(&minor_ticks_style, 2U);
   lv_obj_add_style(temperatureGuage, &minor_ticks_style, LV_PART_ITEMS);
@@ -65,7 +56,7 @@ lv_obj_t *thermostatArc(lv_obj_t *parent)
   static lv_style_t main_line_style;
   lv_style_init(&main_line_style);
 
-  lv_style_set_arc_color(&main_line_style, lv_palette_darken(LV_PALETTE_BLUE, 3));
+  lv_style_set_arc_color(&main_line_style, lv_palette_darken(LV_PALETTE_BLUE_GREY, 3));
   lv_style_set_arc_width(&main_line_style, 2U);
   lv_obj_add_style(temperatureGuage, &main_line_style, LV_PART_MAIN);
 
@@ -83,14 +74,14 @@ lv_obj_t *thermostatArc(lv_obj_t *parent)
   lv_style_set_line_color(&section_label_style, lv_palette_darken(LV_PALETTE_RED, 3));
   lv_style_set_line_width(&section_label_style, 5U);
 
-  lv_style_set_line_color(&section_minor_tick_style, lv_palette_lighten(LV_PALETTE_RED, 2));
-  lv_style_set_line_width(&section_minor_tick_style, 4U);
+   lv_style_set_line_color(&section_minor_tick_style, lv_palette_lighten(LV_PALETTE_RED, 2));
+   lv_style_set_line_width(&section_minor_tick_style, 4U);
 
-  lv_style_set_arc_color(&section_main_line_style, lv_palette_darken(LV_PALETTE_RED, 3));
-  lv_style_set_arc_width(&section_main_line_style, 4U);
+   lv_style_set_arc_color(&section_main_line_style, lv_palette_darken(LV_PALETTE_RED, 3));
+   lv_style_set_arc_width(&section_main_line_style, 4U);
 
   lv_scale_section_t *section = lv_scale_add_section(temperatureGuage);
-  lv_scale_section_set_range(section, 36, 40);
+  lv_scale_section_set_range(section, 35, 36);
   lv_scale_section_set_style(section, LV_PART_INDICATOR, &section_label_style);
   lv_scale_section_set_style(section, LV_PART_ITEMS, &section_minor_tick_style);
   lv_scale_section_set_style(section, LV_PART_MAIN, &section_main_line_style);
@@ -105,9 +96,20 @@ lv_obj_t *thermostatArc(lv_obj_t *parent)
 
   currentTempNeedle = lv_line_create(temperatureGuage);
 
+  lv_obj_set_style_width(currentTempNeedle, 6, LV_PART_MAIN);
+  lv_obj_set_style_height(currentTempNeedle, 6, LV_PART_MAIN);
+
+  int32_t scale_width = lv_obj_get_style_width(currentTempNeedle, LV_PART_MAIN);
+  int32_t scale_height = lv_obj_get_style_height(currentTempNeedle, LV_PART_MAIN);
+
+  LV_LOG_ERROR("orig-scale_width %i", scale_width);
+  LV_LOG_ERROR("orig-scale_height %i", scale_height);
+
   lv_obj_set_style_line_width(currentTempNeedle, 6, LV_PART_MAIN);
   lv_obj_set_style_line_rounded(currentTempNeedle, true, LV_PART_MAIN);
   lv_obj_set_style_line_color(currentTempNeedle, lv_palette_main(LV_PALETTE_RED), 0);
+
+  lv_scale_set_line_needle_value(temperatureGuage, currentTempNeedle, 60, 40);
 
   return temperatureGuage;
 }
