@@ -26,10 +26,8 @@ lv_obj_set_style_text_font(ui_Loading_Screen, &ui_font_Open_Sans_Bold_18, LV_PAR
 
 ui_ThermostatLoading = lv_obj_create(ui_Loading_Screen);
 lv_obj_remove_style_all(ui_ThermostatLoading);
-lv_obj_set_width( ui_ThermostatLoading, 240);
-lv_obj_set_height( ui_ThermostatLoading, 130);
-lv_obj_set_x( ui_ThermostatLoading, -105 );
-lv_obj_set_y( ui_ThermostatLoading, -159 );
+lv_obj_set_width( ui_ThermostatLoading, 190);
+lv_obj_set_height( ui_ThermostatLoading, 110);
 lv_obj_remove_flag( ui_ThermostatLoading, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 lv_obj_set_style_radius(ui_ThermostatLoading, 8, LV_PART_MAIN| LV_STATE_DEFAULT);
 ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_AccessoryOffBkg);
@@ -37,9 +35,9 @@ ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_ST
 ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR, _ui_theme_color_widgetBorder);
 ui_object_set_themeable_style_property(ui_ThermostatLoading, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA, _ui_theme_alpha_widgetBorder);
 lv_obj_set_style_border_width(ui_ThermostatLoading, 3, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_pad_left(ui_ThermostatLoading, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_left(ui_ThermostatLoading, 15, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_pad_right(ui_ThermostatLoading, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_pad_top(ui_ThermostatLoading, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_top(ui_ThermostatLoading, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_pad_bottom(ui_ThermostatLoading, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_HeatControlsLoading = lv_obj_create(ui_Loading_Screen);
