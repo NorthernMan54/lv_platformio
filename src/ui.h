@@ -7,88 +7,16 @@
 #define _SPA_UI_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-    #include "lvgl.h"
+#include "lvgl.h"
 
-#include "ui_helpers.h"
-#include "components/ui_comp.h"
-#include "components/ui_comp_hook.h"
-#include "ui_events.h"
-#include "ui_theme_manager.h"
-#include "ui_themes.h"
+  lv_obj_t *lv_example_scale_4(lv_obj_t *parent);
+  lv_obj_t *scale_arc_180(lv_obj_t *parent);
 
-// SCREEN: ui_Loading_Screen
-void ui_Loading_Screen_screen_init(void);
-extern lv_obj_t *ui_Loading_Screen;
-extern lv_obj_t *ui_ThermostatLoading;
-extern lv_obj_t *ui_HeatControlsLoading;
-extern lv_obj_t *ui_uiHeatStateLoading;
-extern lv_obj_t *ui_heatSwtichLabelLoading;
-extern lv_obj_t *ui_heatStateSwitchlLoading;
-extern lv_obj_t *ui_uiTempRangelLoading;
-extern lv_obj_t *ui_tempRangeHighLabellLoading;
-extern lv_obj_t *ui_tempRangeSwitchlLoading;
-extern lv_obj_t *ui_tempRangeLowLabellLoading;
-extern lv_obj_t *ui_uiPumpLoading;
-extern lv_obj_t *ui_uiLightLoading;
-extern lv_obj_t *ui_uiFilterLoading;
-extern lv_obj_t *ui_LoadingContainer;
-extern lv_obj_t *ui_LoadingLabel;
-// SCREEN: ui_Spa_Screen
-void ui_Spa_Screen_screen_init(void);
-extern lv_obj_t *ui_Spa_Screen;
-extern lv_obj_t *ui_uiThermostatPlaceholder;
-extern lv_obj_t *ui_uiClock;
-extern lv_obj_t *ui_uiClockLabel;
-extern lv_obj_t *ui_HeatControls;
-extern lv_obj_t *ui_uiHeatState;
-extern lv_obj_t *ui_heatSwtichLabel;
-extern lv_obj_t *ui_heatStateSwitch;
-extern lv_obj_t *ui_uiTempRange;
-extern lv_obj_t *ui_tempRangeHighLabel;
-void ui_event_tempRangeSwitch( lv_event_t * e);
-extern lv_obj_t *ui_tempRangeSwitch;
-extern lv_obj_t *ui_tempRangeLowLabel;
-extern lv_obj_t *ui_uiPump1;
-extern lv_obj_t *ui_uiPump2;
-extern lv_obj_t *ui_uiLight1;
-extern lv_obj_t *ui_uiFilter;
-extern lv_obj_t *ui_uiThermostat;
-extern lv_obj_t *ui_uiThermostatLabel;
-extern lv_obj_t *ui_uiThermostatArc;
-extern lv_obj_t *ui____initial_actions0;
-
-LV_IMG_DECLARE( ui__temporary_image );
-LV_IMG_DECLARE( ui_img_uipumpoff_png);   // assets/uiPumpOff.png
-LV_IMG_DECLARE( ui_img_uipumplow_png);   // assets/uiPumpLow.png
-LV_IMG_DECLARE( ui_img_uipumphigh_png);   // assets/uiPumpHigh.png
-LV_IMG_DECLARE( ui_img_lightoff_png);   // assets/lightOff.png
-LV_IMG_DECLARE( ui_img_lighton_png);   // assets/lightOn.png
-LV_IMG_DECLARE( ui_img_filteron_png);   // assets/filterOn.png
-
-
-LV_FONT_DECLARE( ui_font_Montserrat_Bold_14);
-LV_FONT_DECLARE( ui_font_Montserrat_Bold_16);
-LV_FONT_DECLARE( ui_font_Montserrat_Bold_18);
-LV_FONT_DECLARE( ui_font_Open_Sans_12);
-LV_FONT_DECLARE( ui_font_Open_Sans_14);
-LV_FONT_DECLARE( ui_font_Open_Sans_16);
-LV_FONT_DECLARE( ui_font_Open_Sans_18);
-LV_FONT_DECLARE( ui_font_Open_Sans_20);
-LV_FONT_DECLARE( ui_font_Open_Sans_24);
-LV_FONT_DECLARE( ui_font_Open_Sans_26);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_12);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_14);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_16);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_18);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_20);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_24);
-LV_FONT_DECLARE( ui_font_Open_Sans_Bold_26);
-
-
-void ui_init(void);
+  void ui_init(void);
 
 #ifdef __cplusplus
 } /*extern "C"*/
