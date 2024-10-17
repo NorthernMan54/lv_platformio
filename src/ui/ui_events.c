@@ -2,20 +2,24 @@
 // SquareLine Studio version: SquareLine Studio 1.4.2
 // LVGL version: 9.1.0
 // Project name: SPA
-
 #include "ui.h"
+
+
+void uiLightClicked(lv_event_t *e)
+{
+	// Your code here
+	// log_i("uiLightClicked");
+}
+
+void heatRangeSwitch(lv_event_t *e)
+{
+	// Your code here
+	// log_i("heatRangeSwitch");
+}
+
 
 void uiPumpClick(lv_event_t * e)
 {
 	// Your code here
-}
-
-void uiLightClicked(lv_event_t * e)
-{
-	// Your code here
-}
-
-void heatRangeSwitch(lv_event_t * e)
-{
-	// Your code here
+			// log_i("uiPumpClick");
 }

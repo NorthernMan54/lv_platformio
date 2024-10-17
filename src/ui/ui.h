@@ -10,7 +10,17 @@
 extern "C" {
 #endif
 
+#if defined __has_include
+  #if __has_include("lvgl.h")
     #include "lvgl.h"
+  #elif __has_include("lvgl/lvgl.h")
+    #include "lvgl/lvgl.h"
+  #else
+    #include "lvgl.h"
+  #endif
+#else
+  #include "lvgl.h"
+#endif
 
 #include "ui_helpers.h"
 #include "components/ui_comp.h"
@@ -32,14 +42,29 @@ extern lv_obj_t *ui_tempRangeHighLabellLoading;
 extern lv_obj_t *ui_tempRangeSwitchlLoading;
 extern lv_obj_t *ui_tempRangeLowLabellLoading;
 extern lv_obj_t *ui_uiPumpLoading;
+extern lv_obj_t *ui_uiPumpLoading2;
 extern lv_obj_t *ui_uiLightLoading;
 extern lv_obj_t *ui_uiFilterLoading;
-extern lv_obj_t *ui_LoadingContainer;
-extern lv_obj_t *ui_LoadingLabel;
+extern lv_obj_t *ui_uiTemperatureHistory2;
+extern lv_obj_t *ui_uiTemperatureChart2;
+extern lv_obj_t *ui_uiTemperatureChart2_Xaxis;
+extern lv_obj_t *ui_uiTemperatureChart2_Yaxis1;
+extern lv_obj_t *ui_uiTemperatureChart2_Yaxis2;
+extern lv_obj_t *ui_temperatureChartLabel2;
+extern lv_obj_t *ui_uiHeaterHistory2;
+extern lv_obj_t *ui_uiHeaterChart2;
+extern lv_obj_t *ui_uiHeaterChart2_Xaxis;
+extern lv_obj_t *ui_uiHeaterChart2_Yaxis1;
+extern lv_obj_t *ui_uiHeaterChart2_Yaxis2;
+extern lv_obj_t *ui_heaterChartLabel2;
+extern lv_obj_t *ui_uiClock2;
+extern lv_obj_t *ui_uiClockLabel2;
 // SCREEN: ui_Spa_Screen
 void ui_Spa_Screen_screen_init(void);
+void ui_event_Spa_Screen( lv_event_t * e);
 extern lv_obj_t *ui_Spa_Screen;
 extern lv_obj_t *ui_uiThermostatPlaceholder;
+extern lv_obj_t *ui_arcContainer;
 extern lv_obj_t *ui_uiClock;
 extern lv_obj_t *ui_uiClockLabel;
 extern lv_obj_t *ui_HeatControls;
@@ -55,9 +80,32 @@ extern lv_obj_t *ui_uiPump1;
 extern lv_obj_t *ui_uiPump2;
 extern lv_obj_t *ui_uiLight1;
 extern lv_obj_t *ui_uiFilter;
-extern lv_obj_t *ui_uiThermostat;
-extern lv_obj_t *ui_uiThermostatLabel;
-extern lv_obj_t *ui_uiThermostatArc;
+extern lv_obj_t *ui_uiTemperatureHistory;
+extern lv_obj_t *ui_uiTemperatureChart;
+extern lv_obj_t *ui_uiTemperatureChart_Xaxis;
+extern lv_obj_t *ui_uiTemperatureChart_Yaxis1;
+extern lv_obj_t *ui_uiTemperatureChart_Yaxis2;
+extern lv_obj_t *ui_temperatureChartLabel;
+extern lv_obj_t *ui_uiHeaterHistory;
+extern lv_obj_t *ui_uiHeaterChart;
+extern lv_obj_t *ui_uiHeaterChart_Xaxis;
+extern lv_obj_t *ui_uiHeaterChart_Yaxis1;
+extern lv_obj_t *ui_uiHeaterChart_Yaxis2;
+extern lv_obj_t *ui_heaterChartLabel;
+// SCREEN: ui_settingsAndAbout
+void ui_settingsAndAbout_screen_init(void);
+void ui_event_settingsAndAbout( lv_event_t * e);
+extern lv_obj_t *ui_settingsAndAbout;
+extern lv_obj_t *ui_TabView1;
+extern lv_obj_t *ui_settingsPage;
+extern lv_obj_t *ui_settingsContariner;
+extern lv_obj_t *ui_brightnessContainer3;
+extern lv_obj_t *ui_brightnessSlider3;
+extern lv_obj_t *ui_brightnessLabel3;
+extern lv_obj_t *ui_Checkbox2;
+extern lv_obj_t *ui_aboutPage;
+extern lv_obj_t *ui_Container9;
+extern lv_obj_t *ui_aboutLabel;
 extern lv_obj_t *ui____initial_actions0;
 
 LV_IMG_DECLARE( ui__temporary_image );
