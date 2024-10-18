@@ -13,8 +13,10 @@ extern "C"
 
 #include "lvgl.h"
 
-  lv_obj_t *lv_example_scale_4(lv_obj_t *parent);
+  lv_obj_t *example_scale_4(lv_obj_t *parent);
   lv_obj_t *scale_arc_180(lv_obj_t *parent);
+  lv_obj_t *scale_arc_180_small(lv_obj_t *parent);
+  lv_obj_t *scale_arc_180_container(lv_obj_t *parent);
 
   void ui_init(void);
 
