@@ -39,7 +39,7 @@ void ui_init(void)
 
   lv_obj_t *scale3 = scale_arc_180_small(screen);
   lv_obj_set_style_bg_opa(scale3, LV_OPA_60, 0);
-  lv_obj_set_style_bg_color(scale3, lv_palette_lighten(LV_PALETTE_GREY, 4),0);
+  lv_obj_set_style_bg_color(scale3, lv_palette_lighten(LV_PALETTE_GREY, 4), 0);
   lv_obj_set_align(scale3, LV_ALIGN_BOTTOM_LEFT);
   lv_obj_t *scale3line = lv_line_create(scale3);
   lv_obj_set_style_line_width(scale3line, 10, 0);
@@ -53,18 +53,24 @@ void ui_init(void)
   lv_obj_remove_style_all(scale4container);
   lv_obj_set_width(scale4container, 190);
   lv_obj_set_height(scale4container, 110);
-  lv_obj_set_style_pad_left(scale4container, 30, LV_PART_MAIN| LV_STATE_DEFAULT);
-  lv_obj_set_style_pad_top(scale4container, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
+  lv_obj_set_style_border_width(scale4container, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+  lv_obj_set_style_radius(scale4container, 8, LV_PART_MAIN| LV_STATE_DEFAULT);
+  lv_obj_set_style_pad_left(scale4container, 30, LV_PART_MAIN | LV_STATE_DEFAULT);
+  lv_obj_set_style_pad_right(scale4container, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+  lv_obj_set_style_pad_top(scale4container, -10, LV_PART_MAIN | LV_STATE_DEFAULT);
+  lv_obj_set_style_pad_bottom(scale4container, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
   lv_obj_set_align(scale4container, LV_ALIGN_BOTTOM_RIGHT);
   lv_obj_remove_flag(scale4container, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
   lv_obj_set_style_bg_opa(scale4container, LV_OPA_60, 0);
-  lv_obj_set_style_bg_color(scale4container, lv_palette_lighten(LV_PALETTE_GREY, 4),0);
+  lv_obj_set_style_bg_color(scale4container, lv_palette_lighten(LV_PALETTE_GREY, 4), 0);
 
   lv_obj_t *scale4 = scale_arc_180_container(scale4container);
   // lv_obj_set_align(scale4, LV_ALIGN_CENTER);
+
+  lv_obj_align(scale4, LV_ALIGN_CENTER, 0, 45);
   //  lv_obj_set_x(scale4, 10);
-  //lv_obj_set_y(scale4, 10);
+  // lv_obj_set_y(scale4, 10);
   lv_obj_t *scale4line = lv_line_create(scale4);
   lv_obj_set_style_line_width(scale4line, 10, 0);
   lv_obj_set_style_line_rounded(scale4line, true, 0);
