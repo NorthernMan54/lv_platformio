@@ -51,8 +51,8 @@ void ui_init(void)
 
   lv_obj_t *scale4container = lv_obj_create(screen);
   lv_obj_remove_style_all(scale4container);
-  lv_obj_set_width(scale4container, 100);
-  lv_obj_set_height(scale4container, 50);
+  lv_obj_set_width(scale4container, 190);
+  lv_obj_set_height(scale4container, 110);
   lv_obj_set_align(scale4container, LV_ALIGN_BOTTOM_RIGHT);
   lv_obj_remove_flag(scale4container, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
