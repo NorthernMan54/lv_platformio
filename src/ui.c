@@ -39,7 +39,7 @@ void ui_init(void)
 
   lv_obj_t *scale3 = scale_arc_180_small(screen);
   lv_obj_set_style_bg_opa(scale3, LV_OPA_60, 0);
-  lv_obj_set_style_bg_color(scale3, lv_color_black(), 0);
+  lv_obj_set_style_bg_color(scale3, lv_palette_lighten(LV_PALETTE_GREY, 4),0);
   lv_obj_set_align(scale3, LV_ALIGN_BOTTOM_LEFT);
   lv_obj_t *scale3line = lv_line_create(scale3);
   lv_obj_set_style_line_width(scale3line, 10, 0);
@@ -53,11 +53,13 @@ void ui_init(void)
   lv_obj_remove_style_all(scale4container);
   lv_obj_set_width(scale4container, 190);
   lv_obj_set_height(scale4container, 110);
+  lv_obj_set_style_pad_left(scale4container, 30, LV_PART_MAIN| LV_STATE_DEFAULT);
+  lv_obj_set_style_pad_top(scale4container, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
   lv_obj_set_align(scale4container, LV_ALIGN_BOTTOM_RIGHT);
   lv_obj_remove_flag(scale4container, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
   lv_obj_set_style_bg_opa(scale4container, LV_OPA_60, 0);
-  lv_obj_set_style_bg_color(scale4container, lv_color_black(), 0);
+  lv_obj_set_style_bg_color(scale4container, lv_palette_lighten(LV_PALETTE_GREY, 4),0);
 
   lv_obj_t *scale4 = scale_arc_180_container(scale4container);
   // lv_obj_set_align(scale4, LV_ALIGN_CENTER);
